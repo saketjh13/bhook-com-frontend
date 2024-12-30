@@ -1,7 +1,7 @@
 import {
   useCreateMyRestaurant,
   useGetMyRestaurant,
-  useGetMyRestaurantOrders,
+  // useGetMyRestaurantOrders,
   useUpdateMyRestaurant,
 } from "@/api/MyRestaurantApi";
 //   import OrderItemCard from "@/components/OrderItemCard";
