@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import MobileNav from "./MobileNav";
 import MainNav from "./MainNav";
-// import MobileNav from "./MobileNav";
-// import MainNav from "./MainNav";
+
 
 const Header = () => {
   return (
