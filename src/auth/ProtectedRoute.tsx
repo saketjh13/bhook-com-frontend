@@ -1,20 +1,15 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import { Navigate} from "react-router-dom";
-import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
 
-interface ProtectedRouteProps {
-  children: React.ReactElement; // Define the children prop type
-}
-
-const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
+const ProtectedRoute = () => {
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
-    return null; // Optionally, render a spinner or loading message
+    return null;
   }
 
   if (isAuthenticated) {
-    return children; // Render children if the user is authenticated
+    return <Outlet />;
   }
 
   return <Navigate to="/" replace />;

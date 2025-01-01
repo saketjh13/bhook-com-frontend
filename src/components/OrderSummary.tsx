@@ -13,14 +13,14 @@ type Props = {
 
 const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
   const getTotalCost = () => {
-    const totalPrice = cartItems.reduce(
+    const totalInPence = cartItems.reduce(
       (total, cartItem) => total + cartItem.price * cartItem.quantity,
       0
     );
 
-    const totalWithDelivery = totalPrice + restaurant.deliveryPrice;
+    const totalWithDelivery = totalInPence + restaurant.deliveryPrice;
 
-    return (totalWithDelivery).toFixed(2);
+    return (totalWithDelivery ).toFixed(2);
   };
 
   return (
@@ -47,14 +47,14 @@ const OrderSummary = ({ restaurant, cartItems, removeFromCart }: Props) => {
                 size={20}
                 onClick={() => removeFromCart(item)}
               />
-              ₹{((item.price * item.quantity)).toFixed(2)}
+              ₹{((item.price * item.quantity) ).toFixed(2)}
             </span>
           </div>
         ))}
         <Separator />
         <div className="flex justify-between">
           <span>Delivery</span>
-          <span>₹{(restaurant.deliveryPrice).toFixed(2)}</span>
+          <span>₹{(restaurant.deliveryPrice ).toFixed(2)}</span>
         </div>
         <Separator />
       </CardContent>
