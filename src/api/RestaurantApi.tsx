@@ -58,6 +58,6 @@ export const useSearchRestaurants = (
 
   return {
     results,
-    isLoading,
+    isLoading, 
   };
 }; 
